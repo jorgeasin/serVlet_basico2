@@ -35,6 +35,7 @@ public class UpdateServlet extends HttpServlet {
 		String nombre = req.getParameter("nombre");
 		String apellido = req.getParameter("apellido");
 		String dni = req.getParameter("dni");
+		Integer codEquipo = Integer.parseInt(req.getParameter("codEquipo"));
 		User user = new User();
 		System.out.println(id+""+nombre + " " + apellido + " "+ dni);
 		
@@ -42,6 +43,7 @@ public class UpdateServlet extends HttpServlet {
 		user.setNombre(nombre);
 		user.setApellido(apellido);
 		user.setDni(dni);
+		user.setCodEquipo(codEquipo);
 		
 		service.update(user);
 		redirect(req, resp, "Listado.jsp");
